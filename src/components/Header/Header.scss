@@ -1,0 +1,26 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 16px 12px;
+
+    background: #EBA000;
+    border-radius: 16px;
+
+    .logo {
+        width: 154px;
+        height: 100%;
+    }
+
+    .navigation {
+        border: 1px solid #0B213F;
+        border-radius: 16px;
+        padding: 4px;
+
+        a {
+            padding: 12px 24px;
+        }
+    }
+}

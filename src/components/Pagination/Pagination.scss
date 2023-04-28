@@ -1,0 +1,21 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    
+    button {
+        padding: 12px 24px;
+        border: none;
+        border-radius: 12px;
+        background-color:  #EBA000;
+        
+        &:first-child {
+            margin-right: 10px;
+        }
+        &:disabled{
+            background-color: #EEEDF0;
+            color: #939BA9;
+        }
+    }
+}

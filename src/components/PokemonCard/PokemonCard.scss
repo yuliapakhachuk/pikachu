@@ -1,0 +1,10 @@
+.pokemonCard {
+    border: 1px solid #C6C5C9;
+    border-radius: 16px;
+    padding: 12px 16px 20px;
+
+    @media (min-width: 1280px) {
+        padding: 16px 32px 24px;
+    }
+
+}
