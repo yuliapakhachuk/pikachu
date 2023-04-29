@@ -2,6 +2,7 @@ import { PokemonList } from "components/PokemonList/PokemonList";
 import { Pagination } from "components/Pagination/Pagination";
 import { useState } from "react";
 import { ModalWindow } from "components/ModalWindow/ModalWindow";
+import { AddToMyListCard } from "components/AddToMyListCard/AddToMyListCard";
 
 
 export default function PokemonListPage() {
@@ -322,14 +323,17 @@ export default function PokemonListPage() {
           "evolution": []
         }
       ];
-
+      // const [pokemons, setPokemons] = useState(null)
       const [isModalOpened, setModalOpened] = useState(false);
-      const [curentPokemon, setCurenPokemon] = useState(null);
+      const [currentPokemon, setCurrenPokemon] = useState(pokemons[0]);
       const toggleModal = () => { setModalOpened(!isModalOpened) };
 
       const getPokemonId = (id) => {
         toggleModal();
-        setCurenPokemon(id);
+
+        // here needs new fetch
+        const pok = pokemons.find(e => e.id === id)
+        setCurrenPokemon(pok);
     }
 
     return (
@@ -339,11 +343,7 @@ export default function PokemonListPage() {
 
             {isModalOpened && (
                 <ModalWindow onClose={toggleModal}>
-                    {curentPokemon}
-                    {/* <img
-                        src={}
-                        alt={}
-                    /> */}
+                    <AddToMyListCard currentPokemon={currentPokemon}/>
                 </ModalWindow>
             )}
         </div>

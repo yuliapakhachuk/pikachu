@@ -16,14 +16,19 @@
     max-height: calc(100vh - 24px);
     overflow: auto;
     background-color: #ffffff;
-    padding: 16px;
+    padding: 16px 70px;
     border-radius: 16px;
+
+    position: relative;
 
     &__close-btn {
         border: none;
         padding: 12px;
         background-color: #EEEDF0;
         border-radius: 12px;
+
+        position: absolute;
+        right: 16px;
     }
 }
 

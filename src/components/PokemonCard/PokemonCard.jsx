@@ -10,7 +10,7 @@ export function PokemonCard({ pokemon, onClick }) {
     }
 
     return (
-        <li className="pokemonCard" onClick={handleClick}>
+        <li className="pokemon-card" onClick={handleClick}>
             <ul className="pokemon-details">
                 <li className="pokemon-image-frame">
                     <img src={imageUrl} alt={name} className="pokemon-img"/>
