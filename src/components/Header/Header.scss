@@ -27,9 +27,13 @@
             padding: 12px 24px;
             border-radius: 12px;
     
-            &:active, &:hover{
+            &.active {
                 color: white;
                 background-color:  #0B213F;
+            }
+            &:hover {
+                color: white;
+                background-color:  #0b213f66;
             }
         }
     }

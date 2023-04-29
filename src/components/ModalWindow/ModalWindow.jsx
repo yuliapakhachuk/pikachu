@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
+import Cross from "./cross.png"
+import "./ModalWindow.scss"
 
 const modalRoot = document.querySelector('#modal-root');
 
@@ -21,8 +23,13 @@ export function ModalWindow({onClose, children}) {
     };
 
         return createPortal(
-        <div className="Overlay" onClick={handleOverlayClick} >
-            <div className="Modal">{children}</div>
+        <div className="overlay" onClick={handleOverlayClick} >
+            <div className="modal">
+                <button className='modal__close-btn' onClick={onClose}>
+                    <img src={Cross} alt="close" width="12px" height="12px"/>
+                </button>
+                {children}
+            </div>
         </div>,
         modalRoot
         );

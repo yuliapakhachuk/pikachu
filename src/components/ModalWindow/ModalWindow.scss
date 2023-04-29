@@ -1,4 +1,4 @@
-.Overlay {
+.overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -7,11 +7,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.3);
     z-index: 1200;
 }
 
-.Modal {
-    max-width: calc(100vw - 48px);
+.modal {
+    max-width: calc(100vw - 32px);
     max-height: calc(100vh - 24px);
+    overflow: auto;
+    background-color: #ffffff;
+    padding: 16px;
+    border-radius: 16px;
+
+    &__close-btn {
+        border: none;
+        padding: 12px;
+        background-color: #EEEDF0;
+        border-radius: 12px;
+    }
 }
+
+

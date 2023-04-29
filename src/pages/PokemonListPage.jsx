@@ -1,5 +1,7 @@
 import { PokemonList } from "components/PokemonList/PokemonList";
 import { Pagination } from "components/Pagination/Pagination";
+import { useState } from "react";
+import { ModalWindow } from "components/ModalWindow/ModalWindow";
 
 
 export default function PokemonListPage() {
@@ -321,11 +323,29 @@ export default function PokemonListPage() {
         }
       ];
 
+      const [isModalOpened, setModalOpened] = useState(false);
+      const [curentPokemon, setCurenPokemon] = useState(null);
+      const toggleModal = () => { setModalOpened(!isModalOpened) };
+
+      const getPokemonId = (id) => {
+        toggleModal();
+        setCurenPokemon(id);
+    }
+
     return (
-        <div>
-            PokemonListPage
-            <PokemonList pokemons={pokemons}/>
+        <div >
+            <PokemonList pokemons={pokemons} onClick={getPokemonId}/>
             <Pagination/>
+
+            {isModalOpened && (
+                <ModalWindow onClose={toggleModal}>
+                    {curentPokemon}
+                    {/* <img
+                        src={}
+                        alt={}
+                    /> */}
+                </ModalWindow>
+            )}
         </div>
     )
 }
