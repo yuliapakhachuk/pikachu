@@ -15,12 +15,22 @@
     }
 
     .navigation {
+        display: block;
         border: 1px solid #0B213F;
         border-radius: 16px;
         padding: 4px;
+        color: #0B213F;
 
-        a {
+        .navLink {
+            display: inline-block;
+            color: inherit;
             padding: 12px 24px;
+            border-radius: 12px;
+    
+            &:active, &:hover{
+                color: white;
+                background-color:  #0B213F;
+            }
         }
     }
 }
