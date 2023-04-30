@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-// const apiUrl = 'http://localhost:3000/api';
+const apiUrl = 'http://localhost:3000/api';
 
-const apiUrl = "https://white-bat-toga.cyclic.app/api"
+// const apiUrl = "https://white-bat-toga.cyclic.app/api"
 
 export async function getPokemons() {
   try {

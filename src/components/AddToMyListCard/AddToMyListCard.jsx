@@ -1,6 +1,6 @@
 import "./AddToMyListCard.scss";
 
-export function AddToMyListCard({ currentPokemon }) {
+export function AddToMyListCard({ currentPokemon, onAddPokemon }) {
     const {name, imageUrl, type, level, abilities} = currentPokemon;
 
     return(
@@ -21,7 +21,7 @@ export function AddToMyListCard({ currentPokemon }) {
                     {abilities.join(", ")}
                 </li>
                 <li>
-                    <button className="add-pokemon-btn">
+                    <button className="add-pokemon-btn" onClick={onAddPokemon}>
                         Add to My list
                     </button>
                 </li>
