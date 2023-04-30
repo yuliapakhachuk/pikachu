@@ -1,12 +1,10 @@
 import "./PokemonCard.scss"
 
-
-
 export function PokemonCard({ pokemon, onClick }) {
-    const {name, imageUrl, type, level, id} = pokemon;
+    const {name, imageUrl, type, level, _id} = pokemon;
 
     const handleClick = () => {
-        onClick(id);
+        onClick(_id);
     }
 
     return (

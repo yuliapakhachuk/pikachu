@@ -1,38 +1,24 @@
 import axios from 'axios';
 
-// const api_key = '74f606ab36fa7bf868ad1de218dc7286';
-const baseURL = 'https://pokeapi.co/api/v2/pokemon?limit=12';
+// const apiUrl = 'http://localhost:3000/api';
 
-const instance = axios.create({
-    baseURL,
-    // params: { api_key },
-});
+const apiUrl = "https://white-bat-toga.cyclic.app/api"
 
-export const getPokemons= async () => {
-    const { data } = await instance.get('trending/movie/week');
-    return data.results;
-};
+export async function getPokemons() {
+  try {
+    const response = await axios.get(apiUrl + "/pokemons");
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+}
 
-// export const searchMovie = async query => {
-//     const { data } = await instance.get('search/movie', {
-//         params: {
-//         query,
-//         },
-//     });
-//     return data.results;
-// };
+export async function getUserPokemons() {
+    try {
+      const response = await axios.get(apiUrl + "/userPokemons");
+      return response.data;
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
-// export const getMovieDetails = async id => {
-//     const { data } = await instance.get(`movie/${id}`);
-//     return data;
-// };
-
-// export const getMovieCredits = async id => {
-//     const { data } = await instance.get(`movie/${id}/credits`);
-//     return data.cast;
-// };
-
-// export const getMovieReviews = async id => {
-//     const { data } = await instance.get(`movie/${id}/reviews`);
-//     return data.results;
-// };

@@ -9,7 +9,7 @@ export function PokemonList({ pokemons, onClick }) {
     return (
         <ul className="pokemon-list">
             {pokemons.map( pokemon => 
-                <PokemonCard pokemon={ pokemon } key={pokemon.id} onClick={handleClick}/>
+                <PokemonCard pokemon={ pokemon } key={pokemon._id} onClick={handleClick}/>
             )}
         </ul>
     )
