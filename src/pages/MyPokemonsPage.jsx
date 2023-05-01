@@ -12,21 +12,6 @@ export default function MyPokemonsPage() {
     const [isModalOpened, setModalOpened] = useState(false);
     const [currentPokemon, setCurrenPokemon] = useState(null);
 
-    // const [web3, setWeb3] = useState(null);
-
-    // useEffect(() => {
-    //     // Check if Metamask is installed
-    //     if (typeof window.ethereum !== 'undefined') {
-    //       // Connect to Metamask provider
-    //       window.ethereum.enable().then(() => {
-    //         // Create a new instance of Web3 with Metamask provider
-    //         const web3 = new Web3(window.ethereum);
-    //         setWeb3(web3);
-    //       });
-    //     }
-    //   }, []);
-
-
 
     useEffect(() => {
         async function fetchData() {

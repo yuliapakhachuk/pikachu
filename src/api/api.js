@@ -22,3 +22,23 @@ export async function getUserPokemons() {
     }
   }
 
+
+  export async function addUserPokemon(body) {
+    console.log("body", body);
+    // const {userId, pokemonId, addedAt, evolvedAt} = body;
+    const url = apiUrl + '/userPokemons';
+    // const body = {
+    //   userId: userId,
+    //   pokemonId: pokemonId,
+    //   // addedAt: addedAt,
+    //   // evolvedAt: evolvedAt
+    // };
+
+
+    await axios.post(url, {
+      userId: body.userId,
+    pokemonId: body.pokemonId,
+    });
+
+
+  }

@@ -6,7 +6,7 @@ import { Pagination } from "components/Pagination/Pagination";
 import { ModalWindow } from "components/ModalWindow/ModalWindow";
 import { AddToMyListCard } from "components/AddToMyListCard/AddToMyListCard";
 
-import { getPokemons } from "api/api";
+import { getPokemons, addUserPokemon } from "api/api";
 
 export default function PokemonListPage() {
 
@@ -32,6 +32,7 @@ export default function PokemonListPage() {
             const web3 = new Web3(window.ethereum);
             setWeb3(web3);
           });
+
         }
       }
 
@@ -40,6 +41,13 @@ export default function PokemonListPage() {
           // Check if user is logged in to Metamask
           if (web3 && web3.currentProvider && web3.currentProvider.selectedAddress) {
             console.log('User is logged in with address:', web3.currentProvider.selectedAddress);
+            const reqBody = {
+              userId: web3.currentProvider.selectedAddress,
+              pokemonId: currentPokemon._id,
+              // addedAt: Date.now(),
+            }
+
+            addUserPokemon(reqBody);
             // Perform actions with the user's Metamask account
           } else {
             console.log('User is not logged in to Metamask');
@@ -54,8 +62,8 @@ export default function PokemonListPage() {
       const getPokemonId = (id) => {
         toggleModal();
 
-        const pok = pokemons.find(e => e._id === id)
-        setCurrenPokemon(pok);
+        const pokemon = pokemons.find(pokemon => pokemon._id === id)
+        setCurrenPokemon(pokemon);
     }
 
     return (
