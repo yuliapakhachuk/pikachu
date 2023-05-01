@@ -1,17 +1,25 @@
 .header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 16px 12px;
+    padding: 10px 8px;
 
     background: #EBA000;
-    border-radius: 16px;
+    border-radius: 16px; 
+
+    @media (min-width: 768px) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        padding: 16px 12px;
+    }
 
     .logo {
         width: 154px;
         height: 100%;
+
+        @media (max-width: 768px) {
+            margin: 20px;            
+        }
     }
 
     .navigation {
@@ -19,7 +27,11 @@
         border: 1px solid #0B213F;
         border-radius: 16px;
         padding: 4px;
-        color: #0B213F;
+        color: #0B213F; 
+        @media (max-width: 768px) {
+            font-size: 12px;            
+        }
+
 
         .navLink {
             display: inline-block;

@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-// import Web3 from 'web3';
 
 import { PokemonList } from 'components/PokemonList/PokemonList';
 import { Pagination } from 'components/Pagination/Pagination';

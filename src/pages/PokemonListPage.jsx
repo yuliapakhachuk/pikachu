@@ -10,7 +10,9 @@ import { getPokemons, addUserPokemon } from "api/api";
 
 export default function PokemonListPage() {
 
-      const [pokemons, setPokemons] = useState([])
+      const [pokemons, setPokemons] = useState([]);
+      const [pages, setPages] = useState(1);
+
       const [isModalOpened, setModalOpened] = useState(false);
       const [currentPokemon, setCurrenPokemon] = useState(pokemons[0]);
       const [web3, setWeb3] = useState(null);
@@ -19,26 +21,26 @@ export default function PokemonListPage() {
         async function fetchData() {
           const data = await getPokemons();
           setPokemons(data);
+          const pages = Math.ceil(data.length / 12);
+          setPages(pages);
         }
         fetchData();
       }, []);
 
       function conectWithMetaWallet() {
-                // Check if Metamask is installed
+        // Check if Metamask is installed
         if (typeof window.ethereum !== 'undefined') {
-          // Connect to Metamask provider
+          // Connect to Metamask
           window.ethereum.enable().then(() => {
-            // Create a new instance of Web3 with Metamask provider
             const web3 = new Web3(window.ethereum);
             setWeb3(web3);
           });
-
         }
       }
 
       useEffect(() => {
         async function handleConnectWallet() {
-          // Check if user is logged in to Metamask
+          // Check if user is logged into Metamask
           if (web3 && web3.currentProvider && web3.currentProvider.selectedAddress) {
             console.log('User is logged in with address:', web3.currentProvider.selectedAddress);
             const reqBody = {
@@ -48,7 +50,6 @@ export default function PokemonListPage() {
             }
 
             addUserPokemon(reqBody);
-            // Perform actions with the user's Metamask account
           } else {
             console.log('User is not logged in to Metamask');
           }
@@ -56,7 +57,9 @@ export default function PokemonListPage() {
         handleConnectWallet();
       }, [web3]);
 
-      
+      const changePage = (page) => {
+        console.log(page);
+      }
       const toggleModal = () => { setModalOpened(!isModalOpened) };
 
       const getPokemonId = (id) => {
@@ -69,7 +72,7 @@ export default function PokemonListPage() {
     return (
         <div >
             <PokemonList pokemons={pokemons} onClick={getPokemonId}/>
-            <Pagination/>
+            <Pagination pages={pages} onChange={(page) => changePage(page)}/>
 
             {isModalOpened && (
                 <ModalWindow onClose={toggleModal} >
