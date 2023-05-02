@@ -6,16 +6,16 @@ import { Pagination } from "components/Pagination/Pagination";
 import { ModalWindow } from "components/ModalWindow/ModalWindow";
 import { AddToMyListCard } from "components/AddToMyListCard/AddToMyListCard";
 
-import { getPokemons, addUserPokemon } from "api/api";
+import { getPokemons, addNewUserPokemon } from "api/api";
 
 export default function PokemonListPage() {
-
       const [pokemons, setPokemons] = useState([]);
       const [pages, setPages] = useState(1);
 
       const [isModalOpened, setModalOpened] = useState(false);
       const [currentPokemon, setCurrenPokemon] = useState(pokemons[0]);
       const [web3, setWeb3] = useState(null);
+      const toggleModal = () => { setModalOpened(!isModalOpened) };
 
       useEffect(() => {
         async function fetchData() {
@@ -34,8 +34,18 @@ export default function PokemonListPage() {
           window.ethereum.enable().then(() => {
             const web3 = new Web3(window.ethereum);
             setWeb3(web3);
+
+            //Add new user
+            const reqBody = {
+              userId: web3.currentProvider.selectedAddress,
+              pokemonId: currentPokemon._id,
+            }
+
+            addNewUserPokemon(reqBody);
+
           });
         }
+        toggleModal();
       }
 
       useEffect(() => {
@@ -43,24 +53,17 @@ export default function PokemonListPage() {
           // Check if user is logged into Metamask
           if (web3 && web3.currentProvider && web3.currentProvider.selectedAddress) {
             console.log('User is logged in with address:', web3.currentProvider.selectedAddress);
-            const reqBody = {
-              userId: web3.currentProvider.selectedAddress,
-              pokemonId: currentPokemon._id,
-              // addedAt: Date.now(),
-            }
-
-            addUserPokemon(reqBody);
           } else {
             console.log('User is not logged in to Metamask');
           }
         }
         handleConnectWallet();
+        
       }, [web3]);
 
       const changePage = (page) => {
         console.log(page);
       }
-      const toggleModal = () => { setModalOpened(!isModalOpened) };
 
       const getPokemonId = (id) => {
         toggleModal();
