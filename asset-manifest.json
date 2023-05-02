@@ -1,26 +1,24 @@
 {
   "files": {
-    "main.css": "/pikachu/static/css/main.1e391ec4.css",
-    "main.js": "/pikachu/static/js/main.3820345d.js",
-    "static/css/797.b0da5b21.chunk.css": "/pikachu/static/css/797.b0da5b21.chunk.css",
-    "static/js/797.13a37a21.chunk.js": "/pikachu/static/js/797.13a37a21.chunk.js",
-    "static/css/842.b0da5b21.chunk.css": "/pikachu/static/css/842.b0da5b21.chunk.css",
-    "static/js/842.96c71e87.chunk.js": "/pikachu/static/js/842.96c71e87.chunk.js",
-    "static/js/279.fad69de9.chunk.js": "/pikachu/static/js/279.fad69de9.chunk.js",
-    "static/js/813.75a6d015.chunk.js": "/pikachu/static/js/813.75a6d015.chunk.js",
+    "main.css": "/pikachu/static/css/main.9e780151.css",
+    "main.js": "/pikachu/static/js/main.12d65d43.js",
+    "static/css/797.0914e40f.chunk.css": "/pikachu/static/css/797.0914e40f.chunk.css",
+    "static/js/797.9f4a1acd.chunk.js": "/pikachu/static/js/797.9f4a1acd.chunk.js",
+    "static/css/690.5711cdf9.chunk.css": "/pikachu/static/css/690.5711cdf9.chunk.css",
+    "static/js/690.c7fbb6f1.chunk.js": "/pikachu/static/js/690.c7fbb6f1.chunk.js",
+    "static/js/286.62d4fe13.chunk.js": "/pikachu/static/js/286.62d4fe13.chunk.js",
     "static/media/logo-pokemon.png": "/pikachu/static/media/logo-pokemon.533e5f8d26241daf75a8.png",
     "index.html": "/pikachu/index.html",
-    "main.1e391ec4.css.map": "/pikachu/static/css/main.1e391ec4.css.map",
-    "main.3820345d.js.map": "/pikachu/static/js/main.3820345d.js.map",
-    "797.b0da5b21.chunk.css.map": "/pikachu/static/css/797.b0da5b21.chunk.css.map",
-    "797.13a37a21.chunk.js.map": "/pikachu/static/js/797.13a37a21.chunk.js.map",
-    "842.b0da5b21.chunk.css.map": "/pikachu/static/css/842.b0da5b21.chunk.css.map",
-    "842.96c71e87.chunk.js.map": "/pikachu/static/js/842.96c71e87.chunk.js.map",
-    "279.fad69de9.chunk.js.map": "/pikachu/static/js/279.fad69de9.chunk.js.map",
-    "813.75a6d015.chunk.js.map": "/pikachu/static/js/813.75a6d015.chunk.js.map"
+    "main.9e780151.css.map": "/pikachu/static/css/main.9e780151.css.map",
+    "main.12d65d43.js.map": "/pikachu/static/js/main.12d65d43.js.map",
+    "797.0914e40f.chunk.css.map": "/pikachu/static/css/797.0914e40f.chunk.css.map",
+    "797.9f4a1acd.chunk.js.map": "/pikachu/static/js/797.9f4a1acd.chunk.js.map",
+    "690.5711cdf9.chunk.css.map": "/pikachu/static/css/690.5711cdf9.chunk.css.map",
+    "690.c7fbb6f1.chunk.js.map": "/pikachu/static/js/690.c7fbb6f1.chunk.js.map",
+    "286.62d4fe13.chunk.js.map": "/pikachu/static/js/286.62d4fe13.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1e391ec4.css",
-    "static/js/main.3820345d.js"
+    "static/css/main.9e780151.css",
+    "static/js/main.12d65d43.js"
   ]
 }
